@@ -137,6 +137,7 @@ const router = new VueRouter({
 ## store 目录
 
 > store/modules/user.js
+
 ```
 const state = {
   token: '',
@@ -184,11 +185,12 @@ export default store
 ```
 
 ## views/user/list/index.vue
- 
-> 每个页面有唯一的顶层class名如：user-list  
-> 命名规则：与vue文件名一致   
-> 其余class 都在顶层class下  
-> class遵循[BEM命名](../css/BEM命名.md)
+
+> 每个页面有唯一的顶层 class 名如：user-list  
+> 命名规则：与 vue 文件名一致  
+> 其余 class 都在顶层 class 下  
+> class 遵循[BEM 命名](../css/BEM命名.md)
+
 ```
 .user-list{
     /** css 遵循 BEM */
@@ -207,13 +209,16 @@ export default store
 
 > 组件引入的变量名首字母大写驼峰命名  
 > 组件注册和使用使用都以驼峰方式使用
+
 ```
 
 ```
+
 import UserListHeader from './components/user-list-header'
 components: {
-    UserListHeader
+UserListHeader
 }
+
 ```
 <template>
   <div class="user-list">
@@ -261,7 +266,7 @@ export default {
     methods:{
         async userListService(){
           try {
-              const data = await userList(this.userParams)
+              const data = await userList({params: this.userParams})
           } catch (error) {
           }
         },
